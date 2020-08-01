@@ -9,27 +9,37 @@
 #include <string.h>
 
 int main(){
-    int n,i,j,l1,l2,k,f[100];
+    int n,i,j,l1,l2,k,flag[100];
     char s1[100],s2[100];
+    printf("n enter:");
     scanf("%d",&n);
+	for(i=0;i<n;i++){flag[i]=0;}
     for(i=0;i<n;i++){
-        scanf("%[^\n]", s1);
-        scanf("%[^\n]", s2);
-        l1=sizeof(s1);
-        l2=sizeof(s2);
-        for(j=0;j<l1;l1++){
-            for(k=0;k<l2;l2++){
-                if(s1[j]==s2[k]){
-                    f[i]=1;
-                }
-        }
-        }
+	printf("s1 enter:");
+        scanf("%s", s1);
+	printf("s2 enter:");
+        scanf("%s", s2);
+        j=0;
+	
+	while(s1[j] != '\0'){
+		k=0;
+		 while(s2[k] != '\0'){
+			if(s1[j]==s2[k]){
+				flag[i]=1;
+				break;			
+			}
+			k++;
+		}
+			j++;		
+    }
     }
     for(i=0;i<n;i++){
-        if(f[i]==1)
-            printf("YES");
-        else
-            printf("NO");
-    }
+	if(flag[i]==1){
+		printf("YES\n");
+	}
+	else if(flag[i]==0){printf("NO\n");}
+}	
     return 0;
 }
+
+    
