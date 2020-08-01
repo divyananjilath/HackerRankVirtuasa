@@ -3,12 +3,13 @@
 #include <string.h>
 #include <stdbool.h>
 bool check1(char s1[],char s2[]){
-    int i,flag[26]={0};
+    int i,flag[26]={false};
     for(i=0;i<strlen(s1);i++){
-        flag[s1[i] - 'a']=1;
+        if(flag[s1[i] - 'a']!=true)
+            flag[s1[i] - 'a']=true;
     }
-    for(i=0;i<strlen(s2);i++){
-        if(flag[s2[i]-'a'] == 1){
+    for(i=0;i<stlren(s2);i++){
+        if(flag[s2[i]-'a']){
             return true;
         };
     }
